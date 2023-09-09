@@ -32,3 +32,7 @@ def validarEcuacion(a, b, c, x):
   print(f'{resultadoFinal}')
 
 validarEcuacion(valores['a'], valores['b'], valores['c'], x)
+
+# Equipo
+# Angel Almanza
+# Luis Murillo
