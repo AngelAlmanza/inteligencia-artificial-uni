@@ -2,6 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
+from sklearn.metrics import accuracy_score
 
 # Agregar los datos
 # x Son las caracteristicas
@@ -31,9 +32,17 @@ knn_classfier = KNeighborsClassifier(n_neighbors=k)
 knn_classfier.fit(x_train, y_train)
 
 # Clasificamos un nuevo dato
-dato_nuevo = [[2, 1]]
-prediccion = knn_classfier.predict(dato_nuevo)
-print(f'El nuevo dato pertenece a la clase {prediccion}')
+# dato_nuevo = [[2, 1]]
+# prediccion = knn_classfier.predict(dato_nuevo)
+# print(f'El nuevo dato pertenece a la clase {prediccion}')
+
+# Clasificar con los datos de pruebas
+prediccion = knn_classfier.predict(x_text)
+print(f'Los datos pertenecen a la clase {prediccion}')
+
+# Clasificar la presicion de la clasificacion
+accuracy = accuracy_score(y_test, prediccion)
+print(f'Presicion: {accuracy * 100:.2f}%')
 
 # Separar los puntos por clase
 clase_0 = x[y == 0]
