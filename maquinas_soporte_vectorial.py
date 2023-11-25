@@ -14,7 +14,7 @@ X = dataset[['Diametro', 'Peso']].values
 Y = dataset['Etiqueta'].values
 
 # Dividimos los datos en conjuntos de entrenamientos y prueba
-X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.3, random_state=42)
+X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2, random_state=42)
 
 # Creamos el clasificador SVM
 svm_classifier = SVC(kernel='linear') # Usamos un kernel lineal
@@ -49,4 +49,5 @@ plt.legend()
 
 # Mostrar el grafico
 plt.grid(True)
+plt.savefig('grafico_galletas.png')
 plt.show()

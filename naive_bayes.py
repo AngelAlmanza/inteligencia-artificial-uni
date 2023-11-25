@@ -13,7 +13,7 @@ x = dataset[['Diametro', 'Peso']].values
 y = dataset[['Etiqueta']].values
 
 #Dividir el conjunto de datos en entrenamiento y pruebas
-X_train, X_test, y_train, y_test = train_test_split(x, y, test_size = 0.3, random_state = 42)
+X_train, X_test, y_train, y_test = train_test_split(x, y, test_size = 0.2, random_state = 42)
 
 #Crear clasificadoor Bayesino
 clf = GaussianNB()
@@ -27,7 +27,7 @@ y_pred = clf.predict(X_test)
 #Calcular la precisión de las predicciones
 accuracy = accuracy_score(y_test, y_pred)
 print(f"Precisión del clasificador Naive Bayes: {accuracy:.2f}")
-# print("El numero de datos de pruebas es de %d" % X_test_shape[0])
+print("El numero de datos de pruebas es de %d" % X_test.shape[0])
 
 #Separar los datos por clase
 clase0 = x[y.ravel() == 0]
